@@ -12,7 +12,7 @@
 * ``rake db:create_tables``
 * ``rake db:populate_tables``
 3. Setup postgres database connection using this file:
-``config/db_setup.rb``
+``config/db_setup.rb`` and `Rakefile:25`
 4. Run **rack** server using: ``rackup``
 
 ##### Some useful commands/links:
