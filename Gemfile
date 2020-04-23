@@ -8,9 +8,9 @@ gem 'sequel'
 gem 'pg'
 gem 'dry-transaction'
 gem 'rack-cors'
+gem 'rake'
 
 group :development do
-  gem 'rake'
   gem 'racksh'
   gem 'pry'
 end
