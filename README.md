@@ -29,9 +29,9 @@
 // Get movies by week day
 GET http://localhost:9292/api/movies
 
-	{
-		"day": 4
-	}
+  {
+    "day": 4
+  }
     
 RESPONSE
 
@@ -54,13 +54,13 @@ RESPONSE
 // Booking list within a date range
 GET http://localhost:9292/api/bookings
 
-	{
+    {
         "init_date": "2020-04-22",
         "end_date": "2020-04-25"
     }
     
 RESPONSE
-	
+  
     [
         {
             "movie": "Sonic the Hedgehog",
@@ -79,7 +79,7 @@ RESPONSE
 // Create a movie
 POST http://localhost:9292/api/movies
 
-	{
+    {
         "movie": {
             "name": "No Time to Die 2",
             "description": "Recruited to rescue a kidnapped scientist, globe-trotting spy James Bond finds himself hot on the trail of a mysterious villain, who's armed with a dangerous new technology.",
@@ -90,9 +90,9 @@ POST http://localhost:9292/api/movies
     
 RESPONSE
 
-	{
+    {
         "movie": {
-        	"id": 11,
+          "id": 11,
             "name": "No Time to Die 2",
             "description": "Recruited to rescue a kidnapped scientist, globe-trotting spy James Bond finds himself hot on the trail of a mysterious villain, who's armed with a dangerous new technology.",
             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3FIXs2TB2e7fToTo8_rSMygr7-OjR0DhfLpj7QVk1TH2RGaUc"
@@ -105,15 +105,15 @@ RESPONSE
 // Create a booking with date
 POST http://localhost:9292/api/bookings
 
-	{
+    {
         "movie_id": 1,
         "date": "2020-04-30"
     }
     
 RESPONSE
     {
-		"booking": {
-        	"id": 13
+        "booking": {
+          "id": 13
         }
         "movie": "Bad Boys for Life",
         "date": "2020-04-30"
