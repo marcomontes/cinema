@@ -5,12 +5,12 @@ module Cinema
     resource :bookings do
       desc 'List bookings within a date range.'
       get do
-        { data: 'List Movies' }
+        Booking.between_dates(params[:init_date], params[:end_date])
       end
       
       desc 'Create a booking.'
       post do
-        { data: 'Create Booking' }
+        Booking.create_with_date(params[:movie_id], params[:date])
       end
     end
 
