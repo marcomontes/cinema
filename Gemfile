@@ -15,6 +15,6 @@ group :development do
   gem 'pry'
 end
 
-group :test do
+group :test, :production do
   gem 'rspec'
 end
