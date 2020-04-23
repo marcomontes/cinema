@@ -1,6 +1,6 @@
 require 'sequel'
 
-$DB = Sequel.connect(
+DB = Sequel.connect(
   adapter:  :postgres,
   user:     'marcomontes',
   password: '',
