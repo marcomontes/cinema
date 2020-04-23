@@ -19,21 +19,9 @@ class Booking < Sequel::Model
     return results
   end
 
-  def self.create_with_date(movie_id, date)
-    movie_calendar = Calendar.where(movie_date: date, movie_id: movie_id).last
-    booking = new(calendar: movie_calendar, movie_id: movie_calendar.movie_id, movie_date: movie_calendar.movie_date)
-    
-    begin
-      booking.save
-      return booking
-    rescue => e
-      return { error: booking.errors.present? ? booking.errors[:calendar_id].join : 'Error' }
-    end
-  end
-
   def validate
     super
-    movie_calendar = Calendar.where(movie_date: self.movie_date, movie_id: self.movie_id).last
+    movie_calendar  = Calendar.where(movie_date: self.movie_date, movie_id: self.movie_id).last
     active_bookings = Booking.where(calendar: movie_calendar)
 
     if active_bookings.count >= 10

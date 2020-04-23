@@ -10,7 +10,7 @@ module Cinema
       
       desc 'Create a booking.'
       post do
-        Booking.create_with_date(params[:movie_id], params[:date])
+        Booking::Create.call(params: params)
       end
     end
 

@@ -9,12 +9,11 @@ Bundler.require :default, ENV['RACK_ENV']
 
 Sequel::Model.plugin :json_serializer
 
-Dir[File.expand_path('../api/*.rb', __dir__)].each do |f|
-  require f
-end
-Dir[File.expand_path('../app/models/*.rb', __dir__)].each do |f|
-  require f
-end
+Dir[File.expand_path('../api/*.rb', __dir__)].each{ |f| require f }
+Dir[File.expand_path('../app/models/*.rb', __dir__)].each{ |f| require f }
+Dir[File.expand_path('../app/transactions/*.rb', __dir__)].each{ |f| require f }
+Dir[File.expand_path('../app/transactions/movie/*.rb', __dir__)].each{ |f| require f }
+Dir[File.expand_path('../app/transactions/booking/*.rb', __dir__)].each{ |f| require f }
 
 require 'api'
 require 'cinema_app'

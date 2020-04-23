@@ -10,7 +10,7 @@ module Cinema
       
       desc 'Create a movie.'
       post do
-        Movie.create_from_api(params[:name], params[:description], params[:image_url], params[:dates])
+        Movie::Create.call(params: params)
       end
     end
 
