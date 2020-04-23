@@ -22,8 +22,8 @@ task routes: :environment do
 end
 
 namespace :db do
-  # DB = Sequel.connect(adapter: :postgres, user: 'marcomontes', password: '', host: '127.0.0.1', port: '5432', database: 'cinema', max_connections: 10)
-  DB = Sequel.connect(adapter: :postgres, user: 'tahahleqbotsay', password: '36626f949ef0ad18ef7911a229de433ad274692a569868588ba5c4b555f50ceb', host: 'ec2-34-202-7-83.compute-1.amazonaws.com', port: '5432', database: 'dfojpg62bhcptq', max_connections: 10)
+  DB = Sequel.connect(adapter: :postgres, user: 'marcomontes', password: '', host: '127.0.0.1', port: '5432', database: 'cinema', max_connections: 10)
+  # DB = Sequel.connect(adapter: :postgres, user: 'tahahleqbotsay', password: '36626f949ef0ad18ef7911a229de433ad274692a569868588ba5c4b555f50ceb', host: 'ec2-34-202-7-83.compute-1.amazonaws.com', port: '5432', database: 'dfojpg62bhcptq', max_connections: 10)
 
   desc "Creates Tables"
   task :create_tables do
@@ -47,7 +47,8 @@ namespace :db do
     puts "Bookings"
     DB.create_table :bookings do
       primary_key :id
-      foreign_key :calendar_id, :calendars
+      Integer :calendar_id
+      #foreign_key :calendar_id, :calendars
     end
   end
 
@@ -58,8 +59,8 @@ namespace :db do
     bookings  = DB[:bookings]
 
     bookings.delete
-    movies.delete
     calendars.delete
+    movies.delete
   end
 
   desc "Populate Tables"
@@ -79,6 +80,7 @@ namespace :db do
 
     movies    = DB[:movies]
     calendars = DB[:calendars]
+    bookings  = DB[:bookings]
 
     movies_data.each_with_index do |movie, index|
       puts "Creating Movie: #{movie[0]}"
@@ -91,5 +93,14 @@ namespace :db do
         calendars.insert(movie_id: movie[:id], movie_date: day)
       end
     end
+
+
+    puts "Creating Bookings"
+    movie_calendar = calendars.where(movie_date: '2020-04-30', movie_id: movies.all[0][:id]).order(:id).last
+    bookings.insert(calendar_id: movie_calendar[:id])
+    
+    movie_calendar = calendars.where(movie_date: '2020-04-30', movie_id: movies.all[1][:id]).order(:id).last
+    10.times.each{|e| bookings.insert(calendar_id: movie_calendar[:id]) }
+
   end
 end

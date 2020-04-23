@@ -12,6 +12,9 @@ gem 'rake'
 
 group :development do
   gem 'racksh'
+end
+
+group :development, :test do
   gem 'pry'
 end
 
