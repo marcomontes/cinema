@@ -1,0 +1,120 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (6.0.2.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+      zeitwerk (~> 2.2)
+    builder (3.2.4)
+    coderay (1.1.2)
+    concurrent-ruby (1.1.6)
+    diff-lcs (1.3)
+    dry-configurable (0.11.5)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.4, >= 0.4.7)
+      dry-equalizer (~> 0.2)
+    dry-container (0.7.2)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1, >= 0.1.3)
+    dry-core (0.4.9)
+      concurrent-ruby (~> 1.0)
+    dry-equalizer (0.3.0)
+    dry-events (0.2.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.4)
+      dry-equalizer (~> 0.2)
+    dry-inflector (0.2.0)
+    dry-logic (1.0.6)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.2)
+      dry-equalizer (~> 0.2)
+    dry-matcher (0.8.3)
+      dry-core (>= 0.4.8)
+    dry-monads (1.3.5)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.4, >= 0.4.4)
+      dry-equalizer
+    dry-transaction (0.13.0)
+      dry-container (>= 0.2.8)
+      dry-events (>= 0.1.0)
+      dry-matcher (>= 0.7.0)
+      dry-monads (>= 0.4.0)
+    dry-types (1.4.0)
+      concurrent-ruby (~> 1.0)
+      dry-container (~> 0.3)
+      dry-core (~> 0.4, >= 0.4.4)
+      dry-equalizer (~> 0.3)
+      dry-inflector (~> 0.1, >= 0.1.2)
+      dry-logic (~> 1.0, >= 1.0.2)
+    grape (1.3.2)
+      activesupport
+      builder
+      dry-types (>= 1.1)
+      mustermann-grape (~> 1.0.0)
+      rack (>= 1.3.0)
+      rack-accept
+    i18n (1.8.2)
+      concurrent-ruby (~> 1.0)
+    method_source (1.0.0)
+    minitest (5.14.0)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    mustermann-grape (1.0.1)
+      mustermann (>= 1.0.0)
+    pg (1.2.3)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    rack (2.2.2)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
+    racksh (1.0.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5)
+    rake (13.0.1)
+    rspec (3.9.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+    rspec-core (3.9.1)
+      rspec-support (~> 3.9.1)
+    rspec-expectations (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.2)
+    ruby2_keywords (0.0.2)
+    sequel (5.31.0)
+    thread_safe (0.3.6)
+    tzinfo (1.2.7)
+      thread_safe (~> 0.1)
+    zeitwerk (2.3.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dry-transaction
+  grape
+  pg
+  pry
+  rack
+  rack-cors
+  racksh
+  rake
+  rspec
+  sequel
+
+RUBY VERSION
+   ruby 2.5.7p206
+
+BUNDLED WITH
+   2.1.4
