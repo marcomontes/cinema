@@ -29,9 +29,9 @@
 // Get movies by week day
 GET http://localhost:9292/api/movies
 
-  {
-    "day": 4
-  }
+    {
+        "day": 4
+    }
     
 RESPONSE
 
@@ -92,7 +92,7 @@ RESPONSE
 
     {
         "movie": {
-          "id": 11,
+            "id": 11,
             "name": "No Time to Die 2",
             "description": "Recruited to rescue a kidnapped scientist, globe-trotting spy James Bond finds himself hot on the trail of a mysterious villain, who's armed with a dangerous new technology.",
             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3FIXs2TB2e7fToTo8_rSMygr7-OjR0DhfLpj7QVk1TH2RGaUc"
@@ -113,7 +113,7 @@ POST http://localhost:9292/api/bookings
 RESPONSE
     {
         "booking": {
-          "id": 13
+            "id": 13
         }
         "movie": "Bad Boys for Life",
         "date": "2020-04-30"
